@@ -14,8 +14,7 @@ public class palindrome {
             // assign the word to temporary string, and specify it as a (String) not object
             String manipulator = (String) word;
             StringBuilder backwards = new StringBuilder();
-            
-	    // for each letter in the word i/manipulator (back-to-front), append the letter to String backwards
+            // for each letter in the word i/manipulator (back-to-front), append the letter to String backwards
             for (int j = manipulator.length() - 1; j >= 0; j--) {
                 backwards.append(manipulator.charAt(j));
                 // take the substring of the backwards word at each point, if it's not equal to a substring of the actual word as we go along
@@ -23,13 +22,12 @@ public class palindrome {
                 if(!manipulator.substring(0, backwards.length()).equals(backwards.toString())) {
                     break;
                 }
-            }
-            // if backwards == manipulator, we know it's a palindrome thus add it the palindrome list
-            if (backwards.toString().equals(manipulator)) {
-                palindromes.add(backwards.toString());
+                // if backwards == manipulator, we know it's a palindrome thus add it the palindrome list
+                else if(backwards.toString().equals(manipulator)){
+                    palindromes.add(backwards.toString());
+                }
             }
         }
     return palindromes;
     }
 }
-
